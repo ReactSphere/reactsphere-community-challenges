@@ -19,6 +19,7 @@ jobs:
             const issue = context.payload.issue || context.payload.pull_request;
             if (!issue) return;
             const title = typeof issue.title === "string" ? issue.title : "";
+            const lowerTitle = title.toLowerCase();
 
             const labelsToAdd = [];
 
@@ -28,13 +29,38 @@ jobs:
             }
 
             // Auto-label issues that include "question"
-            if (title.toLowerCase().includes("question")) {
+            if (lowerTitle.includes("question")) {
               labelsToAdd.push("question");
             }
 
             // Auto-label issues that include "bug"
-            if (title.toLowerCase().includes("bug")) {
+            if (lowerTitle.includes("bug")) {
               labelsToAdd.push("bug");
+            }
+
+            // Auto-label issues that include "enhancement" or "feature"
+            if (lowerTitle.includes("enhancement") || lowerTitle.includes("feature")) {
+              labelsToAdd.push("enhancement");
+            }
+
+            // Auto-label issues that include "documentation" or "docs"
+            if (lowerTitle.includes("documentation") || lowerTitle.includes("docs")) {
+              labelsToAdd.push("documentation");
+            }
+
+            // Auto-label issues that include "help"
+            if (lowerTitle.includes("help")) {
+              labelsToAdd.push("help wanted");
+            }
+
+            // Auto-label issues that include "beginner" or "good first"
+            if (lowerTitle.includes("beginner") || lowerTitle.includes("good first")) {
+              labelsToAdd.push("good first issue");
+            }
+
+            // Auto-label issues that include "feedback" or "suggest"
+            if (lowerTitle.includes("feedback") || lowerTitle.includes("suggest")) {
+              labelsToAdd.push("feedback");
             }
 
             if (labelsToAdd.length > 0) {
