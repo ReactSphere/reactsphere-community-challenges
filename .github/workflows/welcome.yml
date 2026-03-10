@@ -1,0 +1,52 @@
+name: Welcome New Contributors
+
+on:
+  pull_request:
+    types: [opened]
+  issues:
+    types: [opened]
+  workflow_dispatch:
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Welcome Contributor
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue || context.payload.pull_request;
+            if (!issue) return;
+
+            const login = issue.user.login;
+            const repo = context.repo.repo;
+
+            // Only welcome first-time contributors
+            const result = await github.rest.search.issuesAndPullRequests({
+              q: `repo:${context.repo.owner}/${repo} author:${login}`
+            });
+            const isFirstTime = (result.data.total_count === 0);
+
+            if (isFirstTime) {
+              const welcomeMessage = `
+Hi @${login}! 👋
+
+Welcome to **ReactSphere Community Challenges**! 🎉  
+
+Here’s how to get started:
+- Check out the weekly challenges in [challenges/](https://github.com/${context.repo.owner}/${repo}/tree/main/challenges)
+- Submit your solutions via Pull Requests
+- Track your progress on the [Leaderboard](https://github.com/${context.repo.owner}/${repo}/blob/main/LEADERBOARD.md)
+- Join discussions or ask questions via Issues or Discussions
+
+Happy contributing! 🚀
+              `;
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo,
+                issue_number: issue.number,
+                body: welcomeMessage
+              });
+            }
