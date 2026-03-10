@@ -1,5 +1,6 @@
+---
 name: Challenge Submission
-description: Submit your solution for a weekly challenge.
+about: Submit your solution for a weekly challenge.
 title: "[Week X] Challenge Submission - YOUR_USERNAME"
 labels: challenge, submission
 assignees: ''

@@ -18,21 +18,22 @@ jobs:
           script: |
             const issue = context.payload.issue || context.payload.pull_request;
             if (!issue) return;
+            const title = typeof issue.title === "string" ? issue.title : "";
 
             const labelsToAdd = [];
 
             // Auto-label PRs as challenge submissions if they include week-X in title
-            if (issue.title.match(/week-\d+/i)) {
+            if (title.match(/week-\d+/i)) {
               labelsToAdd.push("challenge");
             }
 
             // Auto-label issues that include "question"
-            if (issue.title.toLowerCase().includes("question")) {
+            if (title.toLowerCase().includes("question")) {
               labelsToAdd.push("question");
             }
 
             // Auto-label issues that include "bug"
-            if (issue.title.toLowerCase().includes("bug")) {
+            if (title.toLowerCase().includes("bug")) {
               labelsToAdd.push("bug");
             }
 
