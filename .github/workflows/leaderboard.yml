@@ -1,10 +1,8 @@
 name: Challenge Leaderboard
 
 on:
-  pull_request:
-    types: [opened, reopened, closed,]
-  issues:
-    types: [opened, reopened, closed]
+  schedule:
+    - cron: '0 2 * * *'  # daily at 02:00 UTC
   push:
     branches:
       - main
@@ -44,3 +42,4 @@ jobs:
           else
             git commit -m "chore: update challenge leaderboard [skip ci]"
             git push
+          fi
