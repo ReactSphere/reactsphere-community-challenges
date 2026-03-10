@@ -2,7 +2,7 @@ name: Challenge Leaderboard
 
 on:
   pull_request:
-    types: [opened, reopened, closed, merged]
+    types: [opened, reopened, closed,]
   issues:
     types: [opened, reopened, closed]
   push:
