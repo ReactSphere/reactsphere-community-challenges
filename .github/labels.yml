@@ -1,0 +1,125 @@
+# Label definitions for ReactSphere Community Challenges
+# Used by the label-sync workflow to keep labels in sync with this file
+
+# ── Status labels ──────────────────────────────────────────────────────────────
+- name: "needs-review"
+  color: "fbca04"
+  description: "Awaiting review from maintainers"
+
+- name: "in-progress"
+  color: "0075ca"
+  description: "Work is currently in progress"
+
+- name: "approved"
+  color: "0e8a16"
+  description: "Submission or change has been approved"
+
+- name: "needs-changes"
+  color: "e4e669"
+  description: "Changes requested before merging"
+
+- name: "blocked"
+  color: "b60205"
+  description: "Blocked by another issue or external dependency"
+
+# ── Type labels ────────────────────────────────────────────────────────────────
+- name: "bug"
+  color: "d73a4a"
+  description: "Something isn't working"
+
+- name: "enhancement"
+  color: "a2eeef"
+  description: "New feature or improvement to existing functionality"
+
+- name: "feature"
+  color: "0075ca"
+  description: "Request for a new feature"
+
+- name: "documentation"
+  color: "0075ca"
+  description: "Improvements or additions to documentation"
+
+- name: "question"
+  color: "d876e3"
+  description: "Further information is requested"
+
+- name: "discussion"
+  color: "e4e669"
+  description: "Open for community discussion"
+
+# ── Challenge labels ───────────────────────────────────────────────────────────
+- name: "challenge"
+  color: "6f42c1"
+  description: "Related to a weekly challenge"
+
+- name: "submission"
+  color: "1d76db"
+  description: "A challenge submission"
+
+- name: "week-1"
+  color: "c5def5"
+  description: "Week 1 challenge"
+
+- name: "week-2"
+  color: "c5def5"
+  description: "Week 2 challenge"
+
+- name: "week-3"
+  color: "c5def5"
+  description: "Week 3 challenge"
+
+- name: "week-4"
+  color: "c5def5"
+  description: "Week 4 challenge"
+
+# ── Difficulty labels ──────────────────────────────────────────────────────────
+- name: "beginner"
+  color: "0e8a16"
+  description: "Beginner-level challenge or task"
+
+- name: "intermediate"
+  color: "fbca04"
+  description: "Intermediate-level challenge or task"
+
+- name: "advanced"
+  color: "d93f0b"
+  description: "Advanced-level challenge or task"
+
+# ── Contribution labels ────────────────────────────────────────────────────────
+- name: "good first issue"
+  color: "7057ff"
+  description: "Good for newcomers"
+
+- name: "help wanted"
+  color: "008672"
+  description: "Extra attention is needed"
+
+- name: "hacktoberfest"
+  color: "ff7518"
+  description: "Valid Hacktoberfest contribution"
+
+# ── Resolution labels ──────────────────────────────────────────────────────────
+- name: "duplicate"
+  color: "cfd3d7"
+  description: "This issue or pull request already exists"
+
+- name: "invalid"
+  color: "e4e669"
+  description: "This doesn't seem right"
+
+- name: "wontfix"
+  color: "ffffff"
+  description: "This will not be worked on"
+
+# ── Area labels ────────────────────────────────────────────────────────────────
+- name: "leaderboard"
+  color: "f9d0c4"
+  description: "Related to the leaderboard"
+
+- name: "ci/cd"
+  color: "0075ca"
+  description: "Related to CI/CD workflows and automation"
+
+- name: "dependencies"
+  color: "0366d6"
+  description: "Pull requests that update a dependency file"
