@@ -1,0 +1,57 @@
+# Auto-labeler configuration for pull requests
+# Uses actions/labeler to apply labels based on changed file paths
+# https://github.com/actions/labeler
+
+documentation:
+  - changed-files:
+    - any-glob-to-any-file:
+      - "**/*.md"
+      - "docs/**"
+
+ci/cd:
+  - changed-files:
+    - any-glob-to-any-file:
+      - ".github/**"
+
+leaderboard:
+  - changed-files:
+    - any-glob-to-any-file:
+      - "LEADERBOARD.md"
+      - ".github/scripts/generate-leaderboard.js"
+
+week-1:
+  - changed-files:
+    - any-glob-to-any-file:
+      - "challenges/week-1/**"
+      - "challenges/week-1.md"
+
+week-2:
+  - changed-files:
+    - any-glob-to-any-file:
+      - "challenges/week-2/**"
+      - "challenges/week-2.md"
+
+week-3:
+  - changed-files:
+    - any-glob-to-any-file:
+      - "challenges/week-3/**"
+      - "challenges/week-3.md"
+
+week-4:
+  - changed-files:
+    - any-glob-to-any-file:
+      - "challenges/week-4/**"
+      - "challenges/week-4.md"
+
+challenge:
+  - changed-files:
+    - any-glob-to-any-file:
+      - "challenges/**"
+
+dependencies:
+  - changed-files:
+    - any-glob-to-any-file:
+      - "package.json"
+      - "package-lock.json"
+      - "yarn.lock"
+      - "pnpm-lock.yaml"
