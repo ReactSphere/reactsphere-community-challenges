@@ -16,3 +16,17 @@ Create a simple React component that displays a greeting.
 ## Points
 - Challenge completed: 15 points
 - PR merged: 10 points
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+### Solution by @jaseel0
+
+```javascript
+import React from 'react';
+
+function Greeting({ name }) {
+  return <h1>Hello, {name}! Welcome to ReactSphere.</h1>;
+}
+
+export default Greeting;
