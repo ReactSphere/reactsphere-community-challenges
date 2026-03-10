@@ -26,7 +26,7 @@ jobs:
             const result = await github.rest.search.issuesAndPullRequests({
               q: `repo:${context.repo.owner}/${repo} author:${login}`
             });
-            const isFirstTime = (result.data.total_count === 0);
+            const isFirstTime = (result.data.total_count <= 1);
 
             if (isFirstTime) {
               const welcomeMessage = `
