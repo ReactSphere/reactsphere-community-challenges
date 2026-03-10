@@ -1,8 +1,10 @@
 name: Challenge Leaderboard
 
 on:
-  schedule:
-    - cron: '0 2 * * *'  # daily at 02:00 UTC
+  pull_request:
+    types: [opened, reopened, closed, merged]
+  issues:
+    types: [opened, reopened, closed]
   push:
     branches:
       - main
@@ -27,7 +29,7 @@ jobs:
       - name: Generate leaderboard
         env:
           GITHUB_TOKEN: ${{ secrets.LEADERBOARD_TOKEN || secrets.GITHUB_TOKEN }}
-          ORG: <your-org-name>
+          ORG: ReactSphere
           REPO: reactsphere-community-challenges
           OUTPUT_FILE: LEADERBOARD.md
         run: node .github/scripts/generate-leaderboard.js
@@ -42,4 +44,3 @@ jobs:
           else
             git commit -m "chore: update challenge leaderboard [skip ci]"
             git push
-          fi
