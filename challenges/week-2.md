@@ -39,7 +39,7 @@ function Greeting() {
     count > 0 && setCount(count - 1);
   }
   function handleReset () {
-    count > 0 setCount(0);
+    count > 0 && setCount(0);
   }
   return (
     <div>
